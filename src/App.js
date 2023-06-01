@@ -1,21 +1,19 @@
-import './App.scss';
+import './App.scss'
 
 // global styles
 import './assets/styles/normalize.css'
-import './assets/styles/flex-box.css'
 import './assets/styles/global.css'
 
-import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom";
-import {useLayoutEffect} from "react";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
-import Home from "./pages/Home";
+import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom"
+import {useLayoutEffect} from "react"
+import Header from "./components/header/Header"
+import Home from "./pages/home/Home"
 
 const Wrapper = ({ children }) => {
-  const location = useLocation();
+  const location = useLocation()
   useLayoutEffect(() => {
-    document.documentElement.scrollTo(0, 0);
-  }, [location.pathname]);
+    document.documentElement.scrollTo(0, 0)
+  }, [location.pathname])
   return children
 }
 
@@ -24,16 +22,18 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Wrapper>
+
           <Header />
+
           <Routes>
             <Route path='/' element={<Home />} />
 
           </Routes>
-          <Footer />
+
         </Wrapper>
       </BrowserRouter>
     </div>
   );
 }
 
-export default App;
+export default App
